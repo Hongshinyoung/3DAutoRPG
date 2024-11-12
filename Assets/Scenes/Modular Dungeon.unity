@@ -9866,6 +9866,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2cd9435c10bb19946bb782dce2a59b7b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 995405215}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2cd9435c10bb19946bb782dce2a59b7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 995405216}
   m_SourcePrefab: {fileID: 100100000, guid: 2cd9435c10bb19946bb782dce2a59b7b, type: 3}
 --- !u!4 &995405213 stripped
 Transform:
@@ -9898,6 +9901,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &995405216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995405214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af83f3a1bb2c2ba45bbbcd0c27aa044d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 995405215}
 --- !u!1001 &1002889672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11565,6 +11581,7 @@ GameObject:
   - component: {fileID: 1143374708}
   - component: {fileID: 1143374711}
   - component: {fileID: 1143374710}
+  - component: {fileID: 1143374712}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -11653,13 +11670,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1143374711}
   wayPoint: {fileID: 1313033449}
-  attackRange: 2
-  moveSpeed: 3
+  attackRange: 3
   walkToRunTime: 2
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
   detectRange: 5
+  moveSpeed: 2
 --- !u!195 &1143374711
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -11682,6 +11699,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1143374712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143374706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 969c19e410940b94b860b80aaae24005, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  animationController: {fileID: 0}
 --- !u!1001 &1163279172
 PrefabInstance:
   m_ObjectHideFlags: 0
