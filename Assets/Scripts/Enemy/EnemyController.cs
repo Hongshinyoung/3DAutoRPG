@@ -32,7 +32,6 @@ public class EnemyController : MonoBehaviour
             agent.SetDestination(target.position);
             if (distanceToTarget <= attackRange)
             {
-                Debug.Log("여기에 오긴하냐");
                 Attack();
             }
         }
