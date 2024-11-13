@@ -4,18 +4,26 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
-    public NavMeshAgent agent;
+
+    [Header("Move")]
     [SerializeField] private Transform wayPoint;
-    [SerializeField] private float attackRange;
-    [SerializeField] private float walkToRunTime = 2f;
+    [SerializeField] private float walkToRunTime = 3f;
+    [SerializeField]private Transform targetEnemy;
+    public NavMeshAgent agent;
+    public float moveSpeed;
+    private bool isRunning;
+    
+    [Header("Detect")]
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float detectRange;
-    public float moveSpeed;
-
-    private float curTime = 0;
-    private bool isRunning;
+    
+    [Header("Attack")]
     public bool isAttacking;
-    [SerializeField]private Transform targetEnemy;
+    private float lastAttackTime;
+    [SerializeField] private float attackRange;
+    [SerializeField] private float attackCoolTime = 1.5f;
+    
+    private float curTime = 0;
 
     private void Start()
     {
@@ -102,11 +110,33 @@ public class PlayerController : MonoBehaviour
         CharacterManager.Instance.Player.animationController.Run();
     }
 
+    
 
     private void Attack()
     {
-        isAttacking = true;
-        CharacterManager.Instance.Player.animationController.Attack();
-        isAttacking = false;
+        if (Time.time - lastAttackTime >= attackCoolTime)
+        {
+            if (targetEnemy != null && Vector3.Distance(transform.position, targetEnemy.position) <= attackRange)
+            {
+                isAttacking = true;
+                CharacterManager.Instance.Player.animationController.Attack();
+                lastAttackTime = Time.time;
+                isAttacking = false;
+
+                DealDamageToEnemy();
+            }
+        }
+    }
+
+    private void DealDamageToEnemy()
+    {
+        if (targetEnemy != null)
+        {
+            EnemyCondition enemyCondition = targetEnemy.GetComponent<EnemyCondition>();
+            if (enemyCondition != null)
+            {
+                enemyCondition.TakePhysicalDamage(10);
+            }
+        }
     }
 }

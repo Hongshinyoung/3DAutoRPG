@@ -14,6 +14,14 @@ public class PlayerCondition : MonoBehaviour, IDamagable
         controller = GetComponent<PlayerController>();
     }
 
+    private void Update()
+    {
+        if (health.currentValue <= 0)
+        {
+            Die();
+        }
+    }
+    
     public void TakePhysicalDamage(int damage)
     {
         health.Subtract(damage);
@@ -29,17 +37,6 @@ public class PlayerCondition : MonoBehaviour, IDamagable
     {
         Debug.Log("플레이어 사망");
     }
-
-    void Update()
-    {
-        if (health.currentValue <= 0)
-        {
-            Die();
-        }
-        else
-        {
-            health.Subtract(health.passiveValue * Time.deltaTime);
-        }
-    }
+    
 
 }

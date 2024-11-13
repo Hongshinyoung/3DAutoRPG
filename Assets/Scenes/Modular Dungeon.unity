@@ -10028,7 +10028,7 @@ MonoBehaviour:
   currentValue: 0
   startValue: 100
   maxValue: 100
-  passiveValue: 1
+  passiveValue: 10
   uiBar: {fileID: 897989155}
 --- !u!1001 &1067757342
 PrefabInstance:
@@ -11244,30 +11244,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8460917321318470221, guid: 3964c23ae9838e84889ea6d65b5861aa, type: 3}
   m_PrefabInstance: {fileID: 1142089063}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1143374706 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7152633454005993167, guid: c12a382410ec82d4790cf2348f7cc617, type: 3}
-  m_PrefabInstance: {fileID: 7113775605801398552}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1143374707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4693259165510835733, guid: c12a382410ec82d4790cf2348f7cc617, type: 3}
   m_PrefabInstance: {fileID: 7113775605801398552}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1143374713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143374706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebdee40f0ca7d2242baad4e06e58951c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  uiCondition: {fileID: 1045439615}
-  controller: {fileID: 0}
 --- !u!1001 &1163279172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22262,10 +22243,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 5224917213933597137, guid: 92c15c89ca6152d418488d45d8eadecc, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6152618217279263810, guid: 92c15c89ca6152d418488d45d8eadecc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.01
@@ -23427,6 +23404,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 949280590278794434, guid: c12a382410ec82d4790cf2348f7cc617, type: 3}
+      propertyPath: uiCondition
+      value: 
+      objectReference: {fileID: 1045439615}
     - target: {fileID: 4693259165510835733, guid: c12a382410ec82d4790cf2348f7cc617, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.554
@@ -23471,33 +23452,14 @@ PrefabInstance:
       propertyPath: wayPoint
       value: 
       objectReference: {fileID: 1313033449}
-    - target: {fileID: 5795630695489994156, guid: c12a382410ec82d4790cf2348f7cc617, type: 3}
-      propertyPath: moveSpeed
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5795630695489994156, guid: c12a382410ec82d4790cf2348f7cc617, type: 3}
-      propertyPath: walkToRunTime
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7152633454005993167, guid: c12a382410ec82d4790cf2348f7cc617, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 9052335701636189581, guid: c12a382410ec82d4790cf2348f7cc617, type: 3}
-      propertyPath: m_Acceleration
-      value: 9999
-      objectReference: {fileID: 0}
-    - target: {fileID: 9052335701636189581, guid: c12a382410ec82d4790cf2348f7cc617, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 350
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7152633454005993167, guid: c12a382410ec82d4790cf2348f7cc617, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1143374713}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c12a382410ec82d4790cf2348f7cc617, type: 3}
 --- !u!1001 &7123254822303899386
 PrefabInstance:
