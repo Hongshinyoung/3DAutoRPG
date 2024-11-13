@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         {
             float distanceToEnemy = Vector3.Distance(transform.position, targetEnemy.position);
 
-            if (distanceToEnemy > attackRange)
+            if (distanceToEnemy > attackRange && !isAttacking)
             {
                 agent.SetDestination(targetEnemy.position);
             }
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
         {
             float distanceToTarget = Vector3.Distance(wayPoint.position, transform.position);
             
-            if (distanceToTarget > detectRange)
+            if (distanceToTarget > detectRange && !isAttacking)
             {
                 agent.SetDestination(wayPoint.position);
             }

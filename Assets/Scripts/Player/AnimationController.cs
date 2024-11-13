@@ -31,12 +31,7 @@ public class AnimationController : MonoBehaviour
 
     public void Attack()
     {
-        if (CharacterManager.Instance.Player.controller.agent.speed == 0)
-        {
-            animator.SetTrigger(doAttack);
-        }
-        
-        Debug.Log("공격");
+        animator.SetTrigger(doAttack);
     }
 
 }
