@@ -10,6 +10,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private float detectRange;
     [SerializeField] private float attackRange;
+    [SerializeField] private float attackCoolTime;
+    [SerializeField] private float lastAttackTime;
 
     public event Action onMove;
     public event Action onAttack;
@@ -39,7 +41,28 @@ public class EnemyController : MonoBehaviour
 
     private void Attack()
     {
-        onAttack?.Invoke();
+        
+        if (Time.time - lastAttackTime >= attackCoolTime)
+        {
+            if (target != null && Vector3.Distance(transform.position, target.position) <= attackRange)
+            {
+                onAttack?.Invoke();
+                lastAttackTime = Time.time;
+
+                DealDamageToPlayer();
+            }
+        }
     }
-    
+
+    private void DealDamageToPlayer()
+    {
+        if (target != null)
+        {
+            PlayerCondition playerCondition = target.GetComponent<PlayerCondition>();
+            if (playerCondition != null)
+            {
+                playerCondition.TakePhysicalDamage(5);
+            }
+        }
+    }
 }
